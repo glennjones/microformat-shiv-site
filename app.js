@@ -7,7 +7,7 @@ var Hapi            = require('hapi'),
 var server = new Hapi.Server();
 
 server.connection({ 
-    host: (process.env.PORT)? '0.0.0.0' : 'localhost', 
+    host: process.env.HOST || 'localhost', 
     port: parseInt(process.env.PORT, 10) || 3009,    
     router: {
         stripTrailingSlash: true
