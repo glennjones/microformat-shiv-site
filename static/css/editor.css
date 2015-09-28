@@ -1,0 +1,48 @@
+.tool-interface textarea{
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 0.4em;
+  font-size: 1em;
+  font-family: open_sansregular, calibri, arial, helvetica, 'lucida grande', 'lucida sans unicode', verdana, sans-serif;
+  min-height: 10em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.prettyprint{
+  min-height: 18em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.tool-interface input[type="text"], input[type="url"] {
+  width: 20em;
+  padding: 0.4em;
+  border: 1px solid #999;
+  border-radius: 0.4em;
+  color: #333;
+  font-size: 1em
+}
+
+.tool-interface label.textinput {
+  display: inline-block;
+  width: 5em;
+}
+
+.tool-interface select {
+  padding: 0.2em;
+  font-family: open_sansregular, calibri, arial, helvetica, 'lucida grande', 'lucida sans unicode', verdana, sans-serif;
+}
+
+.tool-interface option{
+  padding: 0.2em;
+}
+
+pre {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  overflow-x: auto;
+  color: #fff;
+  margin: 0;
+}

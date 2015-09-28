@@ -1,0 +1,20 @@
+{
+	"author": "Glenn Jones",
+	"name": "microformat-shiv-site",
+	"description": "site for microformat-shiv microformats parser",
+	"version": "1.0.2",
+	"license": "MIT",
+	"main": "app.js",
+	"engines" : {
+	    "node": "0.12.x"
+	},
+	"dependencies": {
+		"hapi": "9.3.x",
+		"inert": "^3.0.0",
+    	"vision": "^2.0.1",
+		"blipp": "2.3.x",
+		"good": "6.4.x",
+		"good-console": "5.1.x",
+		"microformat-shiv": "1.x"
+	}
+}

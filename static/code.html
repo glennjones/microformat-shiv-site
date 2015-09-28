@@ -1,0 +1,340 @@
+
+<!doctype html>
+
+<html dir="ltr" lang="en-GB">
+
+	<head>
+	
+		<meta charset="UTF-8">
+		<title>Using code &mdash; microformat-shiv</title>
+		<meta name="description" content="microformat-shiv - A cross browser javascript microformats parser" />
+
+        <link rel="shortcut icon" href="images/logo16.png" />
+		<link rel="stylesheet" media="all" href="css/site.css" />
+        <link rel="stylesheet" media="all" href="css/prettify.css" />
+
+        <script type='text/javascript' src='http://html5shiv.googlecode.com/svn/trunk/html5.js?ver=3.0.5'></script>
+        <script type="text/javascript" src="javascript/prettify.js"></script>
+
+        <script type="text/javascript">
+            window.onload = function(){
+                prettyPrint();
+            }
+        </script>
+
+	</head>
+	
+	<body>
+	
+		<div id="wrapper" class="clearfix">
+
+			<header role="banner">
+				<hgroup>
+					<h1><a href="index.html">microformat-shiv</a></h1> 			
+					<h2>A cross browser javascript microformats parser</h2>
+				</hgroup>
+			</header>
+
+		
+			<div id="content" role="main">
+
+	            <article>
+		            <header>
+			            <h1>Using code</h1>
+		            </header>
+		            <section>
+<ul>
+    <li>Parsing</li>
+        <ul>
+            <li><a href="#get">get()</a></li>
+            <li><a href="#getParent">getParent()</a></li>
+        </ul>
+    <li>Discovery</li>
+        <ul>
+            <li><a href="#count">count()</a></li>
+            <li><a href="#isMicroformat">isMicroformat()</a></li>
+            <li><a href="#hasMicroformats">hasMicroformats()</a></li>
+        </ul>
+</ul>
+
+<h2 id="get">Microformat.get()</h2>
+<h3>simple</h3>
+<pre class="prettyprint"><code class="language-javascript">
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var items;
+
+    items = Microformats.get()
+    // do something with data `items`
+&lt;/script&gt;
+</code></pre>    
+
+
+<h3>using options</h3>
+<pre class="prettyprint"><code class="language-javascript">
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var items,
+        options;
+    
+    options = {&#39;filters&#39;: [&#39;h-card&#39;]};
+    var items = Microformats.get( options )
+    // do something with data `items`
+&lt;/script&gt;
+</code></pre>
+
+<h3>targeting just part of a page</h3>
+<pre class="prettyprint"><code class="language-javascript">
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var items,
+        options;
+    
+    options = {
+        &#39;filters&#39;: [&#39;h-card&#39;],
+        &#39;node&#39;: document.getElementById(&#39;target&#39;)
+    };
+    var items = Microformats.get( options )
+    // do something with data `items`
+&lt;/script&gt;
+</code></pre>
+
+
+<h3>parsing a HTML string</h3>
+<pre class="prettyprint"><code class="language-javascript">
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var items,
+        options;
+    
+    options = {
+        &#39;baseUrl&#39;: &#39;http://glennjones.net&#39;,
+        &#39;html&#39;: &#39;&lt;a class=&quot;h-card&quot; href=&quot;/about.html&quot;&gt;Glenn&lt;/a&gt;&#39;
+    };
+    var items = Microformats.get( options )
+    // do something with data `items`
+&lt;/script&gt; 
+</code></pre>
+Note: The `baseUrl` is optional and is used to resolve relative URLs
+
+
+<h2 id="options">Available options</h2>
+<ul>
+    <li><code>html</code> - (String) the html to be parse (only get and count methods)</li>
+    <li><code>node</code> - (DOM element) </br>the element to be parse - default current browser document</li>
+    <li><code>baseUrl</code> - (String) optional URL used to resolve relative URLs</li>
+    <li><code>filters</code> - (Array) </br>microformats types returned - i.e. <code>['h-card']</code> - always adds <code>rels</code>.</li>
+    <li><code>textFormat</code> - (String) </br>text style <code>whitespacetrimmed</code> or <code>normalised</code> default is <code>whitespacetrimmed</code></li>
+    <li><code>dateFormat</code> - (String) </br>the ISO date profile <code>auto</code>, <code>w3c</code> <code>rfc3339</code> or <code>html5</code> default is auto</li>
+    <li><code>add</code> - (Array) </br>adds microformat version 1 definitions</li>
+</ul>
+
+<p><strong>I would recommended always setting <code>textFormat</code> option to <code>normalised</code>. 
+This is not part of the microformat parsing rules, but in most cases provides more usable output.</strong></p>
+
+Options example. 
+<pre class="prettyprint"><code class="language-json">
+{
+    "filters": ["h-card"],
+    "textFormat": "normalised",
+    "dateFormat": "w3c"
+}
+</code></pre>
+
+
+
+
+
+<h2 id="getParent">Microformat.getParent()</h2>
+<p>The <code>getParent</code> method returns the first parent microformat for the passed node.
+The method can take a <a href="#options"><code>options</code></a> object as a second parameter.</p>
+<pre class="prettyprint"><code class="language-javascript">
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var items,
+        node = document.getElementById('target');
+
+    items = Microformats.getParent( node )
+    // do something with data `items`
+&lt;/script&gt;
+</code></pre>    
+
+
+
+
+<h2 id="count">Microformat.count()</h2>
+<p>The <code>count</code> method returns the number of each microformat type found. It does not do a full parse 
+so it is much quicker than get and can be used for tasks such as adding notifications to the UI. 
+The method can take a <a href="#options"><code>options</code></a> object as a parameter.</p>
+<pre class="prettyprint"><code class="language-javascript">
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var counts = Microformats.count()
+    // do something with data `counts`
+&lt;/script&gt;
+</code></pre>    
+
+Output
+<pre class="prettyprint"><code class="language-json">
+{
+    'h-event': 1,
+    'h-card': 2,
+    'rels': 6
+}
+</code></pre>
+
+
+
+<h2 id="isMicroformat">Microformat.isMicroformat()</h2>
+<p>The <code>isMicroformat</code> method returns weather a node has a valid microformats class. It currently 
+does not work consider <code>rel=*</code> a microformats. The method can take a <a href="#options"><code>options</code></a> object as a second parameter.
+
+
+
+
+</p> 
+<pre class="prettyprint"><code class="language-javascript">   
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var isVaild,
+        node = document.getElementById('target');
+        
+        isVaild = Microformats.isMicroformat( node );
+        // do something with isVaild boolean 
+&lt;/script&gt;
+</code></pre>    
+
+
+
+<h2 id="hasMicroformats">Microformat.hasMicroformats()</h2>
+<p>The <code>hasMicroformats</code> method returns weather a document or node has any valid microformats class. It currently does not 
+take <code>rel=*</code> microformats into account. The method can take a <a href="#options"><code>options</code></a> object as a second parameter.</p> 
+<pre class="prettyprint"><code class="language-javascript">   
+&lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var isVaild,
+        node = document.getElementById('target');
+        
+        isVaild = Microformats.hasMicroformat( node );
+        // do something with isVaild boolean 
+&lt;/script&gt;
+</code></pre>  
+
+
+
+
+
+
+<h2>Supported formats</h2>
+<p>h-adr, h-card, h-entry, h-event, h-geo, h-news, h-product, h-recipe, h-resume, h-review-aggregate, h-review, adr, hCard, hEntry, hEvent, geo, hNews hProduct, hRecipe, hResume, hReview-aggregate, hReview, rel=tag, rel=licence, rel=no-follow, rel=author and XFN</p>
+
+
+<h2>Response</h2>
+
+<p>In 2013 microformat-shiv was completely rewriten  to conform to the new version 2 specification of microformats JSON output. Typical data structure. Below is an example of a h-card microformat.</p>
+<pre class="prettyprint"><code class="language-json">
+{
+    "items": [{
+        "type": ["h-adr"],
+        "properties": {
+            "extended-address": ["Suite 300"],
+            "street-address": ["650 Castro Street"],
+            "locality": ["Mountain View"],
+            "region": ["CA"],
+            "postal-code": ["94041"],
+            "country-name": ["United States"],
+            "name": ["Suite 300, 650 Castro Street, Mountain View, CA 94041, United States"]
+        }
+    }],
+    "rels": {},
+    "rel-urls": {}
+}
+</code></pre>
+
+Typical error structure. 
+<pre class="prettyprint"><code class="language-json">
+{
+    "items": [],
+    "rels": {},
+    "rel-urls": {}
+    "errors": ['No options.node was provided and no document object could be found.']
+}
+</code></pre>
+
+<h2>Mocha tests</h2>
+
+<p>The library includes web pages which run the <a href="https://github.com/microformats/tests">microfomats test suite</a>.The tests are 
+built using Mocha.js.</p>
+
+<!--<p><a href="/test">run mocha tests</a></p>-->
+
+
+
+
+<h2>Support or Contact</h2>
+<p>Having trouble, please raise an issue at: <a href="https://github.com/glennjones/microformat-shiv/issues">https://github.com/glennjones/microformat-shiv/issues</a></p>
+
+
+                     </section>
+	            </article>
+
+            </div> <!-- end content -->
+
+
+        
+            <aside role="complementary">
+	            <section>		
+                <ul>
+
+                    <li class="page_item"><a href="code.html">Using Code</a></li>
+                    <li class="page_item"><a href="extensions.html">Browser Extension</a></li>
+                    <li class="page_item"><a href="compatibility.html">Browser Compatibility</a></li>
+                    <li class="page_item"><a href="changelog.html">Change Log</a></li>
+
+                </ul>
+                <ul>
+
+                    <li class="page_item"><a href="editor.html">Editor</a></li>
+                    <li class="page_item"><a href="h-adr.html">h-adr</a></li>
+                    <li class="page_item"><a href="h-card.html">h-card</a></li>
+                    <li class="page_item"><a href="h-entry.html">h-entry</a></li> 
+                    <li class="page_item"><a href="h-event.html">h-event</a></li>
+                    <li class="page_item"><a href="h-geo.html">h-geo</a></li> 
+                    <li class="page_item"><a href="h-news.html">h-news</a></li> 
+                    <li class="page_item"><a href="h-product.html">h-product</a></li>
+                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li> 
+                    <li class="page_item"><a href="h-resume.html">h-resume</a></li> 
+                    <li class="page_item"><a href="h-review-aggregate.html">h-review-aggregate</a></li>
+                    <li class="page_item"><a href="h-review.html">h-review</a></li>
+                    <li class="page_item"><a href="rel.html">rel=*</a></li> 
+                    <li class="page_item"><a href="xfn.html">XFN</a></li>
+
+
+	            </ul>
+	            </section>
+            </aside>
+     
+
+            <footer role="contentinfo">
+                <p>All content and code is licensed under <a rel="license" href="license.html">MIT license</a>
+                <small class="h-card">&copy; 2010 &mdash; 2015 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
+            </footer>
+		
+		</div>
+        
+
+
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-3021774-10']);
+            _gaq.push(['_trackPageview']);
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        
+         
+	</body>
+</html>
