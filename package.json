@@ -2,7 +2,7 @@
 	"author": "Glenn Jones",
 	"name": "microformat-shiv-site",
 	"description": "site for microformat-shiv microformats parser",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"license": "MIT",
 	"main": "app.js",
 	"engines" : {
