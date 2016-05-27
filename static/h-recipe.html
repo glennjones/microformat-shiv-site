@@ -4,7 +4,7 @@
 <html dir="ltr" lang="en-GB">
 
 	<head>
-	
+
 		<meta charset="UTF-8">
 		<title>h-recipe microformat-shiv</title>
 		<meta name="description" content="microformat-shiv - A cross browser javascript microformats parser" />
@@ -13,7 +13,7 @@
 		<link rel="stylesheet" media="all" href="css/site.css" />
         <link rel="stylesheet" media="all" href="css/prettify.css" />
         <link rel="stylesheet" media="all" href="css/examples.css" />
-				
+
         <script type='text/javascript' src='http://html5shiv.googlecode.com/svn/trunk/html5.js?ver=3.0.5'></script>
         <script type="text/javascript" src="javascript/site.js"></script>
         <script type="text/javascript" src="javascript/beautify.js"></script>
@@ -21,19 +21,19 @@
         <script type="text/javascript" src="javascript/microformat-shiv.min.js"></script>
 
 	</head>
-	
+
 	<body>
-	
+
 		<div id="wrapper" class="clearfix">
 
 			<header role="banner">
 				<hgroup>
-					<h1><a href="index.html">microformat-shiv</a></h1> 			
+					<h1><a href="index.html">microformat-shiv</a></h1>
 					<h2>A cross browser javascript microformats parser</h2>
 				</hgroup>
 			</header>
 
-		
+
 			<div id="content" role="main">
 
 	            <article>
@@ -50,17 +50,17 @@
                      <input id="button" type="button" class="button indented-button" value="Parse" >
 <div id="example">
 <div class="hrecipe">
-    <h1 class="p-name">Yorkshire Puddings</h1>      
+    <h1 class="p-name">Yorkshire Puddings</h1>
     <p class="p-summary">Makes <span class="p-yield">6 good sized Yorkshire puddings</span>, the way my mum taught me</p>
     <p><img class="u-photo" src="http://codebits.glennjones.net/semantic/yorkshire-puddings.jpg"></p>
 
     <p class="p-review h-review-aggregate">
         <span class="p-rating">
-            <span class="p-average">4.5</span> stars out 5 based on 
+            <span class="p-average">4.5</span> stars out 5 based on
             <span class="p-count">35</span> reviews
         </span>
-    </p> 
-    
+    </p>
+
     <div id="ingredients-container">
         <h2>Ingredients</h2>
         <ul>
@@ -76,20 +76,20 @@
     <ul>
         <li class="prepTime">Preparation <span class="value-title" title="PT0H10M">10 mins</span></li>
         <li class="cookTime">Cook <span class="value-title" title="PT0H25M">25 mins</span></li>
-    </ul> 
+    </ul>
 
 
     <h2>Instructions</h2>
     <div class="e-instructions">
         <ol>
-            <li>Pre-heat oven to 230C or gas mark 8. Pour the vegetable oil evenly into 2 x 4-hole 
-            Yorkshire pudding tins and place in the oven to heat through.</li> 
-            
-            <li>To make the batter, add all the flour into a bowl and beat in the eggs until smooth. 
-            Gradually add the milk and water while beating the mixture. It should be smooth and 
+            <li>Pre-heat oven to 230C or gas mark 8. Pour the vegetable oil evenly into 2 x 4-hole
+            Yorkshire pudding tins and place in the oven to heat through.</li>
+
+            <li>To make the batter, add all the flour into a bowl and beat in the eggs until smooth.
+            Gradually add the milk and water while beating the mixture. It should be smooth and
             without lumps. Finally add a pinch of salt.</li>
-            
-            <li>Make sure the oil is piping hot before pouring the batter evenly into the tins. 
+
+            <li>Make sure the oil is piping hot before pouring the batter evenly into the tins.
             Place in the oven for 20-25 minutes until pudding have risen and look golden brown</li>
         </ol>
     </div>
@@ -103,7 +103,7 @@
     <p>(Amount per pudding)</p>
 
     <p>
-        Published on <time class="dt-published" datetime="2011-10-27">27 Oct 2011</time> by 
+        Published on <time class="dt-published" datetime="2011-10-27">27 Oct 2011</time> by
         <span class="p-author h-card">
             <a class="p-name u-url" href="http://glennjones.net">Glenn Jones</a>
         </span>
@@ -119,7 +119,7 @@
 
 <script id="example-script">
 var button;
-button = document.getElementById('button'); 
+button = document.getElementById('button');
 
 button.onclick = function(){
     var node,
@@ -127,28 +127,28 @@ button.onclick = function(){
         items,
         jsonString;
 
-    node = document.getElementById('example');    
+    node = document.getElementById('example');
     options ={
         'node': node,
         'filters': ['h-recipe'],
         'textFormat': 'normalised'
     }
     items = Microformats.get( options );
- 
+
     jsonString = JSON.stringify( items );
     jsonString = js_beautify( jsonString );
     alert( jsonString );
 }
 </script>
- 
+
 
                     <h2>Specifications compliance</h2>
-                    <p>The library supports both version 1 and 2 microfomat HTML mark-up patterns. You can 
-                        check the compliance of the microformat-shiv to the h-recipe standard by using the 
+                    <p>The library supports both version 1 and 2 microfomat HTML mark-up patterns. You can
+                        check the compliance of the microformat-shiv to the h-recipe standard by using the
                         <a href="https://github.com/microformats/tests">microformats test suite</a> .</p>
-                        
+
                     <!--<p><a href="/test">run mocha tests</a></p>-->
-                   
+
                     </section>
 
 	            </article>
@@ -156,9 +156,9 @@ button.onclick = function(){
             </div> <!-- end content -->
 
 
-        
+
             <aside role="complementary">
-	            <section>		
+	            <section>
                 <ul>
 
                     <li class="page_item"><a href="code.html">Using Code</a></li>
@@ -172,31 +172,31 @@ button.onclick = function(){
                     <li class="page_item"><a href="editor.html">Editor</a></li>
                     <li class="page_item"><a href="h-adr.html">h-adr</a></li>
                     <li class="page_item"><a href="h-card.html">h-card</a></li>
-                    <li class="page_item"><a href="h-entry.html">h-entry</a></li> 
+                    <li class="page_item"><a href="h-entry.html">h-entry</a></li>
                     <li class="page_item"><a href="h-event.html">h-event</a></li>
-                    <li class="page_item"><a href="h-geo.html">h-geo</a></li> 
-                    <li class="page_item"><a href="h-news.html">h-news</a></li> 
+                    <li class="page_item"><a href="h-geo.html">h-geo</a></li>
+                    <li class="page_item"><a href="h-news.html">h-news</a></li>
                     <li class="page_item"><a href="h-product.html">h-product</a></li>
-                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li> 
-                    <li class="page_item"><a href="h-resume.html">h-resume</a></li> 
+                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li>
+                    <li class="page_item"><a href="h-resume.html">h-resume</a></li>
                     <li class="page_item"><a href="h-review-aggregate.html">h-review-aggregate</a></li>
                     <li class="page_item"><a href="h-review.html">h-review</a></li>
-                    <li class="page_item"><a href="rel.html">rel=*</a></li> 
+                    <li class="page_item"><a href="rel.html">rel=*</a></li>
                     <li class="page_item"><a href="xfn.html">XFN</a></li>
 
 
 	            </ul>
 	            </section>
             </aside>
-     
+
 
             <footer role="contentinfo">
                 <p>All content and code is licensed under <a rel="license" href="license.html">MIT license</a>
-                <small class="h-card">&copy; 2010 &mdash; 2015 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
+                <small class="h-card">&copy; 2010 &mdash; 2016 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
             </footer>
-		
+
 		</div>
-        
+
 
 
         <script type="text/javascript">
@@ -209,7 +209,7 @@ button.onclick = function(){
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        
-         
+
+
 	</body>
 </html>

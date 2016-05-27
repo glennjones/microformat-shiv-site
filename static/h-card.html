@@ -4,7 +4,7 @@
 <html dir="ltr" lang="en-GB">
 
 	<head>
-	
+
 		<meta charset="UTF-8">
 		<title>h-card microformat-shiv</title>
 		<meta name="description" content="microformat-shiv - A cross browser javascript microformats parser" />
@@ -13,7 +13,7 @@
 		<link rel="stylesheet" media="all" href="css/site.css" />
         <link rel="stylesheet" media="all" href="css/prettify.css" />
         <link rel="stylesheet" media="all" href="css/examples.css" />
-				
+
         <script type='text/javascript' src='http://html5shiv.googlecode.com/svn/trunk/html5.js?ver=3.0.5'></script>
         <script type="text/javascript" src="javascript/site.js"></script>
         <script type="text/javascript" src="javascript/beautify.js"></script>
@@ -21,19 +21,19 @@
         <script type="text/javascript" src="javascript/microformat-shiv.min.js"></script>
 
 	</head>
-	
+
 	<body>
-	
+
 		<div id="wrapper" class="clearfix">
 
 			<header role="banner">
 				<hgroup>
-					<h1><a href="index.html">microformat-shiv</a></h1> 				
+					<h1><a href="index.html">microformat-shiv</a></h1>
 					<h2>A cross browser javascript microformats parser</h2>
 				</hgroup>
 			</header>
 
-		
+
 			<div id="content" role="main">
 
 	            <article>
@@ -43,9 +43,9 @@
 		            <section>
 
 
-                     <p>Below is an example of the microformat-shiv parsing a <a href="http://microformats.org/wiki/hcard">h-card</a>. 
-                     This <a href="http://microformats.org/wiki/">microformat</a> is used to describe 
-                     contact information and is based on the <a href="http://en.wikipedia.org/wiki/VCard">vCard</a> standard used in most 
+                     <p>Below is an example of the microformat-shiv parsing a <a href="http://microformats.org/wiki/hcard">h-card</a>.
+                     This <a href="http://microformats.org/wiki/">microformat</a> is used to describe
+                     contact information and is based on the <a href="http://en.wikipedia.org/wiki/VCard">vCard</a> standard used in most
                      email and office software. </p>
 
 
@@ -55,8 +55,8 @@
 <div id="example">
 <div class="h-card">
     <p>
-        <span class="p-name">Glenn Jones</span>, 
-        <span class="p-title">Director</span>, 
+        <span class="p-name">Glenn Jones</span>,
+        <span class="p-title">Director</span>,
         <span class="p-org">Madgex</span>
     </p>
     <p>
@@ -64,19 +64,19 @@
     </p>
     <ul class="no-bullets">
         <li class="p-tel">+44 (0)1273 123456</li>
-        <li class="p-tel">+44 (0)7966 123456</li> 
+        <li class="p-tel">+44 (0)7966 123456</li>
     </ul>
 
     <p class="h-adr p-adr">
-        <span class="p-extended-address">Suite 1</span>, 
-        <span class="p-extended-address">Clarence House</span>,  
-        <span class="p-street-address">30-31 North Street</span>, 
-        <span class="p-locality">Brighton</span>, 
-        <span class="p-region">East Sussex</span>, 
-        <span class="p-country-name">United Kingdom</span>,     
-        <span class="p-postal-code">BN1 1EB</span> 
+        <span class="p-extended-address">Suite 1</span>,
+        <span class="p-extended-address">Clarence House</span>,
+        <span class="p-street-address">30-31 North Street</span>,
+        <span class="p-locality">Brighton</span>,
+        <span class="p-region">East Sussex</span>,
+        <span class="p-country-name">United Kingdom</span>,
+        <span class="p-postal-code">BN1 1EB</span>
     </p>
- 
+
     <p>Website: <a class="u-url" href="http://www.madgex.com/">http://www.madgex.com/</a></p>
     <p>Commonly used username: <span class="p-nickname">glennjones</span></p>
 </div>
@@ -89,7 +89,7 @@
 
 <script id="example-script">
 var button;
-button = document.getElementById('button'); 
+button = document.getElementById('button');
 
 button.onclick = function(){
     var node,
@@ -97,29 +97,29 @@ button.onclick = function(){
         items,
         jsonString;
 
-    node = document.getElementById('example');    
+    node = document.getElementById('example');
     options ={
         'node': node,
         'filters': ['h-card'],
         'textFormat': 'normalised'
     }
     items = Microformats.get( options );
- 
+
     jsonString = JSON.stringify( items );
     jsonString = js_beautify( jsonString );
     alert( jsonString );
 }
 </script>
- 
+
 
 
                     <h2>Specifications compliance</h2>
-                    <p>The library supports both version 1 and 2 microfomat HTML mark-up patterns. You can 
-                        check the compliance of the microformat-shiv to the h-card standard by using the 
+                    <p>The library supports both version 1 and 2 microfomat HTML mark-up patterns. You can
+                        check the compliance of the microformat-shiv to the h-card standard by using the
                         <a href="https://github.com/microformats/tests">microformats test suite</a>.</p>
-                        
+
                     <!--<p><a href="/test">run mocha tests</a></p>-->
-                   
+
                     </section>
 
 	            </article>
@@ -127,9 +127,9 @@ button.onclick = function(){
             </div> <!-- end content -->
 
 
-        
+
             <aside role="complementary">
-	            <section>		
+	            <section>
                 <ul>
 
                     <li class="page_item"><a href="code.html">Using Code</a></li>
@@ -143,31 +143,31 @@ button.onclick = function(){
                     <li class="page_item"><a href="editor.html">Editor</a></li>
                     <li class="page_item"><a href="h-adr.html">h-adr</a></li>
                     <li class="page_item"><a href="h-card.html">h-card</a></li>
-                    <li class="page_item"><a href="h-entry.html">h-entry</a></li> 
+                    <li class="page_item"><a href="h-entry.html">h-entry</a></li>
                     <li class="page_item"><a href="h-event.html">h-event</a></li>
-                    <li class="page_item"><a href="h-geo.html">h-geo</a></li> 
-                    <li class="page_item"><a href="h-news.html">h-news</a></li> 
+                    <li class="page_item"><a href="h-geo.html">h-geo</a></li>
+                    <li class="page_item"><a href="h-news.html">h-news</a></li>
                     <li class="page_item"><a href="h-product.html">h-product</a></li>
-                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li> 
-                    <li class="page_item"><a href="h-resume.html">h-resume</a></li> 
+                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li>
+                    <li class="page_item"><a href="h-resume.html">h-resume</a></li>
                     <li class="page_item"><a href="h-review-aggregate.html">h-review-aggregate</a></li>
                     <li class="page_item"><a href="h-review.html">h-review</a></li>
-                    <li class="page_item"><a href="rel.html">rel=*</a></li> 
+                    <li class="page_item"><a href="rel.html">rel=*</a></li>
                     <li class="page_item"><a href="xfn.html">XFN</a></li>
 
 
 	            </ul>
 	            </section>
             </aside>
-     
+
 
             <footer role="contentinfo">
                 <p>All content and code is licensed under <a rel="license" href="license.html">MIT license</a>
-                <small class="h-card">&copy; 2010 &mdash; 2015 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
+                <small class="h-card">&copy; 2010 &mdash; 2016 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
             </footer>
-		
+
 		</div>
-        
+
 
 
         <script type="text/javascript">
@@ -180,7 +180,7 @@ button.onclick = function(){
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        
-         
+
+
 	</body>
 </html>

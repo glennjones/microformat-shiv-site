@@ -4,7 +4,7 @@
 <html dir="ltr" lang="en-GB">
 
 	<head>
-	
+
 		<meta charset="UTF-8">
 		<title>Using code &mdash; microformat-shiv</title>
 		<meta name="description" content="microformat-shiv - A cross browser javascript microformats parser" />
@@ -23,19 +23,19 @@
         </script>
 
 	</head>
-	
+
 	<body>
-	
+
 		<div id="wrapper" class="clearfix">
 
 			<header role="banner">
 				<hgroup>
-					<h1><a href="index.html">microformat-shiv</a></h1> 			
+					<h1><a href="index.html">microformat-shiv</a></h1>
 					<h2>A cross browser javascript microformats parser</h2>
 				</hgroup>
 			</header>
 
-		
+
 			<div id="content" role="main">
 
 	            <article>
@@ -67,7 +67,7 @@
     items = Microformats.get()
     // do something with data `items`
 &lt;/script&gt;
-</code></pre>    
+</code></pre>
 
 
 <h3>using options</h3>
@@ -76,7 +76,7 @@
 &lt;script type=&quot;text/javascript&quot;&gt;
     var items,
         options;
-    
+
     options = {&#39;filters&#39;: [&#39;h-card&#39;]};
     var items = Microformats.get( options )
     // do something with data `items`
@@ -89,7 +89,7 @@
 &lt;script type=&quot;text/javascript&quot;&gt;
     var items,
         options;
-    
+
     options = {
         &#39;filters&#39;: [&#39;h-card&#39;],
         &#39;node&#39;: document.getElementById(&#39;target&#39;)
@@ -106,14 +106,14 @@
 &lt;script type=&quot;text/javascript&quot;&gt;
     var items,
         options;
-    
+
     options = {
         &#39;baseUrl&#39;: &#39;http://glennjones.net&#39;,
         &#39;html&#39;: &#39;&lt;a class=&quot;h-card&quot; href=&quot;/about.html&quot;&gt;Glenn&lt;/a&gt;&#39;
     };
     var items = Microformats.get( options )
     // do something with data `items`
-&lt;/script&gt; 
+&lt;/script&gt;
 </code></pre>
 Note: The `baseUrl` is optional and is used to resolve relative URLs
 
@@ -129,10 +129,10 @@ Note: The `baseUrl` is optional and is used to resolve relative URLs
     <li><code>add</code> - (Array) </br>adds microformat version 1 definitions</li>
 </ul>
 
-<p><strong>I would recommended always setting <code>textFormat</code> option to <code>normalised</code>. 
+<p><strong>I would recommended always setting <code>textFormat</code> option to <code>normalised</code>.
 This is not part of the microformat parsing rules, but in most cases provides more usable output.</strong></p>
 
-Options example. 
+Options example.
 <pre class="prettyprint"><code class="language-json">
 {
     "filters": ["h-card"],
@@ -157,14 +157,14 @@ The method can take a <a href="#options"><code>options</code></a> object as a se
     items = Microformats.getParent( node )
     // do something with data `items`
 &lt;/script&gt;
-</code></pre>    
+</code></pre>
 
 
 
 
 <h2 id="count">Microformat.count()</h2>
-<p>The <code>count</code> method returns the number of each microformat type found. It does not do a full parse 
-so it is much quicker than get and can be used for tasks such as adding notifications to the UI. 
+<p>The <code>count</code> method returns the number of each microformat type found. It does not do a full parse
+so it is much quicker than get and can be used for tasks such as adding notifications to the UI.
 The method can take a <a href="#options"><code>options</code></a> object as a parameter.</p>
 <pre class="prettyprint"><code class="language-javascript">
 &lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
@@ -172,7 +172,7 @@ The method can take a <a href="#options"><code>options</code></a> object as a pa
     var counts = Microformats.count()
     // do something with data `counts`
 &lt;/script&gt;
-</code></pre>    
+</code></pre>
 
 Output
 <pre class="prettyprint"><code class="language-json">
@@ -186,39 +186,39 @@ Output
 
 
 <h2 id="isMicroformat">Microformat.isMicroformat()</h2>
-<p>The <code>isMicroformat</code> method returns weather a node has a valid microformats class. It currently 
+<p>The <code>isMicroformat</code> method returns weather a node has a valid microformats class. It currently
 does not work consider <code>rel=*</code> a microformats. The method can take a <a href="#options"><code>options</code></a> object as a second parameter.
 
 
 
 
-</p> 
-<pre class="prettyprint"><code class="language-javascript">   
+</p>
+<pre class="prettyprint"><code class="language-javascript">
 &lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
     var isVaild,
         node = document.getElementById('target');
-        
+
         isVaild = Microformats.isMicroformat( node );
-        // do something with isVaild boolean 
+        // do something with isVaild boolean
 &lt;/script&gt;
-</code></pre>    
+</code></pre>
 
 
 
 <h2 id="hasMicroformats">Microformat.hasMicroformats()</h2>
-<p>The <code>hasMicroformats</code> method returns weather a document or node has any valid microformats class. It currently does not 
-take <code>rel=*</code> microformats into account. The method can take a <a href="#options"><code>options</code></a> object as a second parameter.</p> 
-<pre class="prettyprint"><code class="language-javascript">   
+<p>The <code>hasMicroformats</code> method returns weather a document or node has any valid microformats class. It currently does not
+take <code>rel=*</code> microformats into account. The method can take a <a href="#options"><code>options</code></a> object as a second parameter.</p>
+<pre class="prettyprint"><code class="language-javascript">
 &lt;script src=&quot;microformat-shiv.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
 &lt;script type=&quot;text/javascript&quot;&gt;
     var isVaild,
         node = document.getElementById('target');
-        
+
         isVaild = Microformats.hasMicroformat( node );
-        // do something with isVaild boolean 
+        // do something with isVaild boolean
 &lt;/script&gt;
-</code></pre>  
+</code></pre>
 
 
 
@@ -251,7 +251,7 @@ take <code>rel=*</code> microformats into account. The method can take a <a href
 }
 </code></pre>
 
-Typical error structure. 
+Typical error structure.
 <pre class="prettyprint"><code class="language-json">
 {
     "items": [],
@@ -263,7 +263,7 @@ Typical error structure.
 
 <h2>Mocha tests</h2>
 
-<p>The library includes web pages which run the <a href="https://github.com/microformats/tests">microfomats test suite</a>.The tests are 
+<p>The library includes web pages which run the <a href="https://github.com/microformats/tests">microfomats test suite</a>.The tests are
 built using Mocha.js.</p>
 
 <!--<p><a href="/test">run mocha tests</a></p>-->
@@ -281,9 +281,9 @@ built using Mocha.js.</p>
             </div> <!-- end content -->
 
 
-        
+
             <aside role="complementary">
-	            <section>		
+	            <section>
                 <ul>
 
                     <li class="page_item"><a href="code.html">Using Code</a></li>
@@ -297,31 +297,31 @@ built using Mocha.js.</p>
                     <li class="page_item"><a href="editor.html">Editor</a></li>
                     <li class="page_item"><a href="h-adr.html">h-adr</a></li>
                     <li class="page_item"><a href="h-card.html">h-card</a></li>
-                    <li class="page_item"><a href="h-entry.html">h-entry</a></li> 
+                    <li class="page_item"><a href="h-entry.html">h-entry</a></li>
                     <li class="page_item"><a href="h-event.html">h-event</a></li>
-                    <li class="page_item"><a href="h-geo.html">h-geo</a></li> 
-                    <li class="page_item"><a href="h-news.html">h-news</a></li> 
+                    <li class="page_item"><a href="h-geo.html">h-geo</a></li>
+                    <li class="page_item"><a href="h-news.html">h-news</a></li>
                     <li class="page_item"><a href="h-product.html">h-product</a></li>
-                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li> 
-                    <li class="page_item"><a href="h-resume.html">h-resume</a></li> 
+                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li>
+                    <li class="page_item"><a href="h-resume.html">h-resume</a></li>
                     <li class="page_item"><a href="h-review-aggregate.html">h-review-aggregate</a></li>
                     <li class="page_item"><a href="h-review.html">h-review</a></li>
-                    <li class="page_item"><a href="rel.html">rel=*</a></li> 
+                    <li class="page_item"><a href="rel.html">rel=*</a></li>
                     <li class="page_item"><a href="xfn.html">XFN</a></li>
 
 
 	            </ul>
 	            </section>
             </aside>
-     
+
 
             <footer role="contentinfo">
                 <p>All content and code is licensed under <a rel="license" href="license.html">MIT license</a>
-                <small class="h-card">&copy; 2010 &mdash; 2015 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
+                <small class="h-card">&copy; 2010 &mdash; 2016 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
             </footer>
-		
+
 		</div>
-        
+
 
 
         <script type="text/javascript">
@@ -334,7 +334,7 @@ built using Mocha.js.</p>
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        
-         
+
+
 	</body>
 </html>

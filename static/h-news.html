@@ -4,7 +4,7 @@
 <html dir="ltr" lang="en-GB">
 
 	<head>
-	
+
 		<meta charset="UTF-8">
 		<title>h-news microformat-shiv</title>
 		<meta name="description" content="microformat-shiv - A cross browser javascript microformats parser" />
@@ -13,7 +13,7 @@
 		<link rel="stylesheet" media="all" href="css/site.css" />
         <link rel="stylesheet" media="all" href="css/prettify.css" />
         <link rel="stylesheet" media="all" href="css/examples.css" />
-				
+
         <script type='text/javascript' src='http://html5shiv.googlecode.com/svn/trunk/html5.js?ver=3.0.5'></script>
         <script type="text/javascript" src="javascript/site.js"></script>
         <script type="text/javascript" src="javascript/beautify.js"></script>
@@ -21,19 +21,19 @@
         <script type="text/javascript" src="javascript/microformat-shiv.min.js"></script>
 
 	</head>
-	
+
 	<body>
-	
+
 		<div id="wrapper" class="clearfix">
 
 			<header role="banner">
 				<hgroup>
-					<h1><a href="index.html">microformat-shiv</a></h1> 			
+					<h1><a href="index.html">microformat-shiv</a></h1>
 					<h2>A cross browser javascript microformats parser</h2>
 				</hgroup>
 			</header>
 
-		
+
 			<div id="content" role="main">
 
 	            <article>
@@ -53,24 +53,24 @@
     <div class="p-entry h-entry">
         <h1><a class="p-name u-url" href="http://microformats.org/2012/06/25/microformats-org-at-7">microformats.org at 7</a></h1>
         <div class="e-content">
-            <p class="p-summary">Last week the microformats.org community 
-                celebrated its 7th birthday at a gathering hosted by Mozilla in 
-                San Francisco and recognized accomplishments, challenges, and 
+            <p class="p-summary">Last week the microformats.org community
+                celebrated its 7th birthday at a gathering hosted by Mozilla in
+                San Francisco and recognized accomplishments, challenges, and
                 opportunities.</p>
 
-            <p>The microformats tagline “humans first, machines second” 
-                forms the basis of many of our 
-                <a href="http://microformats.org/wiki/principles">principles</a>, and 
-                in that regard, we’d like to recognize a few people and 
+            <p>The microformats tagline “humans first, machines second”
+                forms the basis of many of our
+                <a href="http://microformats.org/wiki/principles">principles</a>, and
+                in that regard, we’d like to recognize a few people and
                 thank them for their years of volunteer service </p>
-        </div>  
-        <p>Updated 
+        </div>
+        <p>Updated
             <time class="dt-updated" datetime="2012-06-25T17:08:26">June 25th, 2012</time> by
             <a class="p-author h-card" href="http://tantek.com/">Tantek</a>
         </p>
     </div>
     <p>
-        Acticle by: <a class="p-source-org h-card" href="http://microformats.org/">microformats.org</a> 
+        Acticle by: <a class="p-source-org h-card" href="http://microformats.org/">microformats.org</a>
     </p>
 </div>
 </div>
@@ -82,7 +82,7 @@
 
 <script id="example-script">
 var button;
-button = document.getElementById('button'); 
+button = document.getElementById('button');
 
 button.onclick = function(){
     var node,
@@ -90,29 +90,29 @@ button.onclick = function(){
         items,
         jsonString;
 
-    node = document.getElementById('example');    
+    node = document.getElementById('example');
     options ={
         'node': node,
         'filters': ['h-news'],
         'textFormat': 'normalised'
     }
     items = Microformats.get( options );
- 
+
     jsonString = JSON.stringify( items );
     jsonString = js_beautify( jsonString );
     alert( jsonString );
 }
 </script>
- 
+
 
 
                     <h2>Specifications compliance</h2>
-                    <p>The library supports both version 1 and 2 microfomat HTML mark-up patterns. You can 
-                        check the compliance of the microformat-shiv to the h-news standard by using the 
+                    <p>The library supports both version 1 and 2 microfomat HTML mark-up patterns. You can
+                        check the compliance of the microformat-shiv to the h-news standard by using the
                         <a href="https://github.com/microformats/tests">microformats test suite</a>.</p>
-                        
+
                     <!--<p><a href="/test">run mocha tests</a></p>-->
-                   
+
                     </section>
 
 	            </article>
@@ -120,9 +120,9 @@ button.onclick = function(){
             </div> <!-- end content -->
 
 
-        
+
             <aside role="complementary">
-	            <section>		
+	            <section>
                 <ul>
 
                     <li class="page_item"><a href="code.html">Using Code</a></li>
@@ -136,31 +136,31 @@ button.onclick = function(){
                     <li class="page_item"><a href="editor.html">Editor</a></li>
                     <li class="page_item"><a href="h-adr.html">h-adr</a></li>
                     <li class="page_item"><a href="h-card.html">h-card</a></li>
-                    <li class="page_item"><a href="h-entry.html">h-entry</a></li> 
+                    <li class="page_item"><a href="h-entry.html">h-entry</a></li>
                     <li class="page_item"><a href="h-event.html">h-event</a></li>
-                    <li class="page_item"><a href="h-geo.html">h-geo</a></li> 
-                    <li class="page_item"><a href="h-news.html">h-news</a></li> 
+                    <li class="page_item"><a href="h-geo.html">h-geo</a></li>
+                    <li class="page_item"><a href="h-news.html">h-news</a></li>
                     <li class="page_item"><a href="h-product.html">h-product</a></li>
-                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li> 
-                    <li class="page_item"><a href="h-resume.html">h-resume</a></li> 
+                    <li class="page_item"><a href="h-recipe.html">h-recipe</a></li>
+                    <li class="page_item"><a href="h-resume.html">h-resume</a></li>
                     <li class="page_item"><a href="h-review-aggregate.html">h-review-aggregate</a></li>
                     <li class="page_item"><a href="h-review.html">h-review</a></li>
-                    <li class="page_item"><a href="rel.html">rel=*</a></li> 
+                    <li class="page_item"><a href="rel.html">rel=*</a></li>
                     <li class="page_item"><a href="xfn.html">XFN</a></li>
 
 
 	            </ul>
 	            </section>
             </aside>
-     
+
 
             <footer role="contentinfo">
                 <p>All content and code is licensed under <a rel="license" href="license.html">MIT license</a>
-                <small class="h-card">&copy; 2010 &mdash; 2015 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
+                <small class="h-card">&copy; 2010 &mdash; 2016 <a class="p-name u-url" href="http://glennjones.net/" rel="me author">Glenn Jones</a> &#8764; exploring ideas of the semantic web and data portability.</small></p>
             </footer>
-		
+
 		</div>
-        
+
 
 
         <script type="text/javascript">
@@ -173,7 +173,7 @@ button.onclick = function(){
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
         </script>
-        
-         
+
+
 	</body>
 </html>
